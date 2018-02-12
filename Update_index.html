@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web OCR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="./Scripts/jQuery3.3.1.js"></script>
+    <script src="./Scripts/popper.js"></script>
+    <script src="./Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="mainBody">
+<!--for the heading-->
+<div class="container-fluid">
+    <div class="row" id="row-heading" >
+        <div class="col">
+            <h2 class="text-center" style="color:#0027a0">Text-Recognition</h2>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div>
+        <!--This is the left side.User selects -->
+        <div class="row">
+            <div class="col">
+                <div class="card uploadedImage">
+                    <img class="card-img-top" src="./Images/camera.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Upload your picture...</h4>
+                        <form id="frmUploader" enctype="multipart/form-data" action="/UploadImage" method="post">
+                            <input class="btn btn-primary" type="file" name="imgUploader" multiple/>
+                            <input class="btn btn-primary" type="submit" name="submit" id="btnSubmit" value="Upload"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--This is the right side. Incoming from server-->
+            <div class="col">
+                <div class="card uploadedImage">
+                    <img class="card-img-top" src="./Images/camera.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Jane Doe</h4>
+                        <p class="card-text">Some example text some example text. Jane Doe is an architect and
+                            engineer</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

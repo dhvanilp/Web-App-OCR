@@ -20,10 +20,10 @@ var Storage = multer.diskStorage({
 });
 
 app.set('port', process.env.PORT || 8000);
-app.set('hostname',"10.50.18.105");
+app.set('hostname',"10.50.16.176");
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/Update_index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/UploadImage", function (req, res) {
@@ -61,6 +61,7 @@ app.post("/UploadImage", function (req, res) {
                 res.end(text);
             }
         });
+
     };
 
 });

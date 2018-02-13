@@ -1,18 +1,99 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>Upload images to server using Node JS</title>
-    <script src="Scripts/jQuery3.3.1.js"></script>
+    <meta charset="UTF-8">
+    <title>Web OCR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .uploadedImage {
+        padding: 20px;
+    }
 
-<body>
-<form id="frmUploader" enctype="multipart/form-data" action="/UploadImage" method="post">
-    <input type="file" name="imgUploader" multiple/>
-    <input type="submit" name="submit" id="btnSubmit" value="Upload"/>
-</form>
+    .mainBody {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: black;
+        /*background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Desktop-Dark-Pics-1080P-PIC-WPD009329.jpg");*/
+
+    }
+
+    #row-heading {
+        background: rgba(0, 0, 0, 0.3);
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    #HoveringButton:hover{
+        transform: scale(1.1,1.1);
+    }
+
+</style>
+<body class="mainBody">
+<!--for the heading-->
+<div class="container-fluid">
+    <div class="row" id="row-heading">
+        <div class="col">
+            <h2 class="text-center" style="color:#0027a0">Text-Recognition</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <!--This is the left side.User selects -->
+        <div class="col-sm-6 d-flex align-items-stretch">
+            <div class="card uploadedImage" style="background: rgba(255,255,255,0.81)">
+                <div class="text-center">
+                    <img class="card-img-top"
+                         src="https://lh3.googleusercontent.com/_-a1CwhEQWZpCeuHcEX9hF8soNPeBTuyT6lPG4j7CFRvb8UY24Dc6ed96sdf2sBoFZxF=w300"
+                         alt="Card image"
+                         style="width:70%;
+                     position: center;
+                            align-items: center ">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Upload your picture...</h4>
+                    <form id="frmUploader" enctype="multipart/form-data" action="/UploadImage" method="post">
+                        <div class="text-center" id="HoveringButton">
+                            <label id="" class="btn btn-primary  btn-file">
+                                Browse the image to convert to text <input type="file" name="imgUploader" multiple
+                                                                           style="display: none; ">
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <input class="btn-primary " type="submit" name="submit" id="btnSubmit" value="Upload"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!--This is the right side.-->
+        <div class="col-sm-6 d-flex align-items-stretch">
+            <div class="card uploadedImage" style="background: rgba(255,255,255,0.81)">
+                <img class="card-img-top"
+                     src="https://is1-ssl.mzstatic.com/image/thumb/Purple49/v4/30/17/33/30173365-93f0-34f6-bf24-5d13e11079ee/source/1280x1280bb.jpg"
+                     alt="Card image" style="width:70%">
+                <div class="card-body">
+                    <h4 class="card-title">Jane Doe</h4>
+                    <p class="card-text">Some example text some example text. Jane Doe is an architect and
+                        engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 </body>
-
 </html>

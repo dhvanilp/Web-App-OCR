@@ -9,5 +9,5 @@ Video presentation of the application running [here](https://www.youtube.com/wat
 ### Running the Project
 - Go through the [InstallationHelp.md](https://github.com/DhvanilP/Text-Recognition/blob/master/InstallationHelp.md) to install ```Leptonica``` and ```Tesseract-OCR```, also install ```node```,```npm```
 - Head to the directory of the application using Terminal and type ```npm install```  to download the dependencies.
-- Type ```npm start``` in the Terminal.
+- Type ```node app``` in the Terminal.
 - Head to a Browser and type the address in the Terminal.

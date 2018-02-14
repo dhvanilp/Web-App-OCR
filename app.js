@@ -26,7 +26,7 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.post("/UploadImage", function (req, res) {
+app.all("/UploadImage", function (req, res) {
     var upload = multer({
         storage: Storage,
         fileFilter: function (req, file, callback) {
@@ -61,6 +61,7 @@ app.post("/UploadImage", function (req, res) {
                 res.end(text);
             }
         });
+        // res.end("This is the text to display");
 
     };
 

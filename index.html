@@ -9,6 +9,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imageUploaded')
+                    .attr('src', e.target.result)
+                    .width(500)
+                    .height(375);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 <style>
     .uploadedImage {
         padding: 20px;
@@ -55,6 +70,7 @@
                     <img class="card-img-top"
                          src="https://lh3.googleusercontent.com/_-a1CwhEQWZpCeuHcEX9hF8soNPeBTuyT6lPG4j7CFRvb8UY24Dc6ed96sdf2sBoFZxF=w300"
                          alt="Card image"
+                         id="imageUploaded"
                          style="width:70%;
                      position: center;
                             align-items: center ">
@@ -65,7 +81,8 @@
                         <div class="text-center" id="HoveringButton">
                             <label id="" class="btn btn-primary  btn-file">
                                 Browse the image to convert to text <input type="file" name="imgUploader" multiple
-                                                                           style="display: none; ">
+                                                                           onchange="readURL(this)"
+                                                                           style="display: none;">
                             </label>
                         </div>
                         <div class="text-center">
@@ -80,9 +97,11 @@
         <!--This is the right side.-->
         <div class="col-sm-6 d-flex align-items-stretch">
             <div class="card uploadedImage" style="background: rgba(255,255,255,0.81)">
-                <img class="card-img-top"
-                     src="https://is1-ssl.mzstatic.com/image/thumb/Purple49/v4/30/17/33/30173365-93f0-34f6-bf24-5d13e11079ee/source/1280x1280bb.jpg"
-                     alt="Card image" style="width:70%">
+
+                <iframe src="localhost:8000/Upload"></iframe>
+                <!--<img class="card-img-top"-->
+                     <!--src="https://is1-ssl.mzstatic.com/image/thumb/Purple49/v4/30/17/33/30173365-93f0-34f6-bf24-5d13e11079ee/source/1280x1280bb.jpg"-->
+                     <!--alt="Card image" style="width:70%">-->
                 <div class="card-body">
                     <h4 class="card-title">Jane Doe</h4>
                     <p class="card-text">Some example text some example text. Jane Doe is an architect and

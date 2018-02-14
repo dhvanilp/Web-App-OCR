@@ -26,7 +26,7 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.all("/UploadImage", function (req, res) {
+app.post("/UploadImage", function (req, res) {
     var upload = multer({
         storage: Storage,
         fileFilter: function (req, file, callback) {
